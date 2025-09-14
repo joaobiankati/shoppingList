@@ -1,9 +1,8 @@
-import { Text, View, TextInput} from "react-native";
+import { Text, View, TextInput, TouchableOpacity, Image, } from "react-native";
 import { styles } from "./styles";
 
 
 export default function Home(){
-
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -12,7 +11,19 @@ export default function Home(){
             </View>
 
             <View style={styles.bottom}>
+                <View style={styles.infoContainer}>
+                    <View style={styles.infoContainerItem}>
+                        <Text style={styles.product}>Produtos</Text>
+                        <Text style={styles.counter}>0</Text>
+                    </View>
 
+                    <View style={styles.infoContainerItem}>
+                        <Text style={styles.finished}>Finalizados</Text>
+                        <Text style={styles.counter}>0</Text>
+                    </View>
+                    
+                </View>
+                
             </View>
             <View style={styles.form}>
                 <TextInput
@@ -21,6 +32,15 @@ export default function Home(){
                 placeholderTextColor={"#808080"}
                 keyboardType="default"
                 />
+
+                <TouchableOpacity activeOpacity={0.5}>
+                   <Image 
+                        source={require('../../../assets/plus.png')}
+                        style={styles.button}
+                    /> 
+
+                </TouchableOpacity>
+
             </View>
 
             
