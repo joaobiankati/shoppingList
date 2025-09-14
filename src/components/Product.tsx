@@ -68,35 +68,58 @@ const styles=StyleSheet.create({
     },
 
     checkButton: {
-        
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: "#31C667",
+        backgroundColor: "transparent",
+        justifyContent: "center",
+        alignItems: "center"
     },
 
     checkButtonPurple: {
-        
+        width: 24,
+        height: 24,
+        borderRadius: 4,
+        backgroundColor: "#7A4A9E",
+        justifyContent: "center",
+        alignItems: "center"
     },
 
     productName: {
-        
+        flex: 1,
+        fontSize: 16,
+        color: "#000000",
+        marginLeft: 8
     },
 
     productNameChecked: {
-        
+        textDecorationLine: "line-through",
+        color: "#808080"
     },
 
     removeButton: {
-        
+        padding: 8,
+        justifyContent: "center",
+        alignItems: "center"
     },
 
     removeIcon: {
-        
+        width: 16,
+        height: 16,
     },
 
     checkmark: {
-        
+        color: "#FFFFFF",
+        fontSize: 14,
+        fontWeight: "bold"
     },
 
     emptyCheck: {
-        
+        color: "#7A4A9E",
+        fontSize: 16,
+        fontWeight: "bold"
     }
 
 
