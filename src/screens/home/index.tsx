@@ -94,7 +94,7 @@ export default function Home() {
                                 />
                                 <View style={styles.emptyListText}>
                                     <Text style={styles.emptyTitle}>Você ainda não tem produtos na lista de compra</Text>
-                                    <Text style={styles.emptySubtitle}>Adicione produtos e organize sua lista de compras</Text>
+                                    <Text style={styles.emptyTitleBottom}>Adicione produtos e organize sua lista de compras</Text>
                                 </View>
                             </View>
                             

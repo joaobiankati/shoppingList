@@ -20,10 +20,12 @@ export const styles = StyleSheet.create({
     },
     title: {
         color: "#F2F2F2",
-        fontSize: 16,
+        fontSize: 18,
         fontStyle: "normal",
         fontWeight: 700,
         lineHeight: 140,
+        fontFamily: "Inter",
+        textAlign: "center",
         
     },
     form : {
@@ -37,7 +39,7 @@ export const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-        height: 56,
+        height: 54,
         padding: 16, 
         backgroundColor: "#ffffff",
         borderTopLeftRadius: 5,
@@ -47,12 +49,13 @@ export const styles = StyleSheet.create({
     
     },
     button: {
-        width: 52,
-        height: 56,
-        backgroundColor: "#31C667",
         borderRadius: 6,
         padding: 18,
+        width: 52,
+        height: 52,
+        backgroundColor: "#31C667",
         display: "flex",
+        gap: 4,
 
         alignItems: "center",
         justifyContent: "center",
@@ -62,26 +65,20 @@ export const styles = StyleSheet.create({
         display: "flex",
         marginTop: 32,
         flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
         paddingBottom: 20,
+
+        justifyContent: "space-between",
+        alignItems: "flex-end",
+        alignSelf: "stretch",
+
         borderBottomWidth: 1,
-        borderColor: "#D9D9D9"
+        borderColor: "#D9D9D9",
     },
     infoContainerItem: {
         gap: 8,
         flexDirection: "row",
-    },
-
-    counter: {
-        display: "flex",
-        paddingHorizontal: 8,
-        paddingVertical: 2,
         alignItems: "center",
-        borderRadius: 999,
-        backgroundColor: "#D9D9D9",
-        gap: 10,
-        justifyContent: "center"
+        justifyContent: "center",
     },
 
     product: {
@@ -98,23 +95,34 @@ export const styles = StyleSheet.create({
         fontWeight: 700,
     },
 
+    counter: {
+        gap: 8,
+        display: "flex",
+        paddingHorizontal: 8,
+        paddingVertical: 2,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        
+        borderRadius: 999,
+        backgroundColor: "#D9D9D9",
+    },
+
     listView: {
         flexGrow: 1,
         paddingTop: 20,
     },
 
     emptyState: {
-        flex: 1,
-        justifyContent: "center",
         alignItems: "center",
         paddingHorizontal: 40,
-        paddingTop: 60,
+        paddingTop: 40,
     },
     
     emptyIcon: {
-        width: 80,
-        height: 80,
-        marginBottom: 32,
+        width: 56,
+        height: 56,
+        marginBottom: 16,
     },
     
     emptyListText: {
@@ -130,7 +138,7 @@ export const styles = StyleSheet.create({
         lineHeight: 22,
     },
     
-    emptySubtitle: {
+    emptyTitleBottom: {
         fontSize: 14,
         fontWeight: "400",
         color: "#808080",
