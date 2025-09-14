@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Text, View, TextInput, TouchableOpacity, Image } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
 import { styles } from "./styles";
 
 interface ProductType {
@@ -12,9 +12,23 @@ export default function Home() {
     const [products, setProducts] = useState<ProductType[]>([]);
 
     const productCount = products.length;
+
     const productFinalizedCount = products.reduce((counter, product) => {
         return counter + (product.finalized ? 1 : 0);
     }, 0);
+
+    function handleAddProduct() {
+        if (newProduct.trim() === "") {
+            setNewProduct("");
+            return Alert.alert("Nome do produto Inválido");
+        } else if (products.some(item => item.name === newProduct)) {
+            setNewProduct("");
+            return Alert.alert("Produto já cadastrado");
+        }
+        setProducts([...products, { name: newProduct, finalized: false }]);
+        setNewProduct("");
+    }
+
 
     return (
         <View style={styles.container}>
@@ -24,11 +38,11 @@ export default function Home() {
 
             <View style={styles.bottom}>
                 <View style={styles.infoContainer}>
+
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.product}>Produtos</Text>
                         <Text style={styles.counter}>{productCount}</Text>
                     </View>
-
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.finished}>Finalizados</Text>
                         <Text style={styles.counter}>{productFinalizedCount}</Text>
@@ -45,7 +59,7 @@ export default function Home() {
                     value={newProduct}
                     onChangeText={setNewProduct}
                 />
-                <TouchableOpacity activeOpacity={0.5}>
+                <TouchableOpacity onPress={() => handleAddProduct()} activeOpacity={0.8}>
                     <Image
                         source={require('../../../assets/plus.png')}
                         style={styles.button}

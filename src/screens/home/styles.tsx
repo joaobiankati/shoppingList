@@ -98,4 +98,44 @@ export const styles = StyleSheet.create({
         fontWeight: 700,
     },
 
+    listView: {
+        flexGrow: 1,
+        paddingTop: 20,
+    },
+
+    emptyState: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: 40,
+        paddingTop: 60,
+    },
+    
+    emptyIcon: {
+        width: 80,
+        height: 80,
+        marginBottom: 32,
+    },
+    
+    emptyListText: {
+        alignItems: "center",
+    },
+    
+    emptyTitle: {
+        fontSize: 16,
+        fontWeight: "700",
+        color: "#808080",
+        textAlign: "center",
+        marginBottom: 8,
+        lineHeight: 22,
+    },
+    
+    emptySubtitle: {
+        fontSize: 14,
+        fontWeight: "400",
+        color: "#808080",
+        textAlign: "center",
+        lineHeight: 20,
+    }
+
 })
