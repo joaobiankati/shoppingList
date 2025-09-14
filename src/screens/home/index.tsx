@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Text, View, TextInput, TouchableOpacity, Image, } from "react-native";
 import { styles } from "./styles";
 
 
 export default function Home(){
+    const [productName, setProductName] = useState("");
+
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -31,6 +34,8 @@ export default function Home(){
                 placeholder="Adicione um novo produto"
                 placeholderTextColor={"#808080"}
                 keyboardType="default"
+                onChangeText={setProductName}
+                value={productName}
                 />
 
                 <TouchableOpacity activeOpacity={0.5}>
