@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Alert, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
+import { Alert, FlatList, Text, TextInput, TouchableOpacity, View, Image } from "react-native";
+import { Product } from "../../components/Product";
 import { styles } from "./styles";
 
 interface ProductType {
@@ -30,6 +31,14 @@ export default function Home() {
     }
 
 
+    function handleOnToggle(name: string) {
+        setProducts(products.map(item => 
+            item.name === name 
+                ? { ...item, finalized: !item.finalized } 
+                : item
+        ));
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -38,11 +47,11 @@ export default function Home() {
 
             <View style={styles.bottom}>
                 <View style={styles.infoContainer}>
-
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.product}>Produtos</Text>
                         <Text style={styles.counter}>{productCount}</Text>
                     </View>
+                
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.finished}>Finalizados</Text>
                         <Text style={styles.counter}>{productFinalizedCount}</Text>
