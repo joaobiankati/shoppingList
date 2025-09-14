@@ -65,12 +65,43 @@ export default function Home() {
                         <Text style={styles.product}>Produtos</Text>
                         <Text style={styles.counter}>{productCount}</Text>
                     </View>
+
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.finished}>Finalizados</Text>
                         <Text style={styles.counter}>{productFinalizedCount}</Text>
                     </View>  
                 </View>
 
+                <FlatList
+                    data={products}
+                    keyExtractor={(item) => item.name}
+                    renderItem={({ item }) =>
+                        <Product
+                            name={item.name}
+                            finalized={item.finalized}
+                            onRemove={() => handleRemoveProduct(item.name)}
+                            onToggle={() => handleOnToggle(item.name)}
+                        />
+                    }
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.listView}
+                    ListEmptyComponent={() => (
+                        <>
+                            <View style={styles.emptyState}>
+                                <Image
+                                    source={require('../../../assets/shopping_list.png')}
+                                    style={styles.emptyIcon}
+                                />
+                                <View style={styles.emptyListText}>
+                                    <Text style={styles.emptyTitle}>Você ainda não tem produtos na lista de compra</Text>
+                                    <Text style={styles.emptySubtitle}>Adicione produtos e organize sua lista de compras</Text>
+                                </View>
+                            </View>
+                            
+                        </>
+                    )}
+                    scrollEnabled={products.length > 0}
+                />
             </View>
 
             <View style={styles.form}>
