@@ -30,6 +30,20 @@ export default function Home() {
         setNewProduct("");
     }
 
+    function handleRemoveProduct(name: string) {
+        return Alert.alert("Remover", `Deseja remover o produto ${name}`, [
+            {
+                text: "Sim",
+                style: "destructive",
+                onPress: () => {
+                    setProducts(products.filter(p => p.name !== name));
+                }
+            },
+            {
+                text: "Não",
+            }
+        ]);
+    }
 
     function handleOnToggle(name: string) {
         setProducts(products.map(item => 
@@ -51,7 +65,6 @@ export default function Home() {
                         <Text style={styles.product}>Produtos</Text>
                         <Text style={styles.counter}>{productCount}</Text>
                     </View>
-                
                     <View style={styles.infoContainerItem}>
                         <Text style={styles.finished}>Finalizados</Text>
                         <Text style={styles.counter}>{productFinalizedCount}</Text>
